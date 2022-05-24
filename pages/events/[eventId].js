@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React, { Fragment } from 'react';
 import EventContent from '../../components/event-detail/event-content';
 import EventLogistics from '../../components/event-detail/event-logistics';
@@ -14,6 +15,13 @@ const EventDetails = (props) => {
   }
   return (
     <Fragment>
+      <Head>
+        <title>{props.selectedEvent.title}</title>
+        <meta
+          name='description'
+          content='Find a lot of great events that allow you to evolve...'
+        />
+      </Head>
       <EventSummary title={props.selectedEvent.title} />
       <EventLogistics
         date={props.selectedEvent.date}
